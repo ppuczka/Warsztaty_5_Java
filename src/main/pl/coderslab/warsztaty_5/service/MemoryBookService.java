@@ -10,6 +10,21 @@ import java.util.List;
 public class MemoryBookService implements BookService {
     private List<Book> list;
 
+    @Override
+    public Book getById(int id) {
+        for (int i = 0; i < list.size(); i++ ) {
+            if(this.list.get(i).getId() == id ) {
+                return this.list.get(i);
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public void insert(Book book) {
+        this.list.add(book);
+        book.setId(this.list.size());
+    }
 
     public MemoryBookService() {
         list = new ArrayList<>();

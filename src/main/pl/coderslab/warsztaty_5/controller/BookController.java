@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/books")
 public class BookController {
+
     @Autowired
     private BookService bookService;
 
@@ -29,12 +30,22 @@ public class BookController {
       return this.bookService.getList();
     }
 
+    @PostMapping("")
+    public Book addBook(@RequestBody Book book) {
+        this.bookService.insert(book);
+        return book;
+    }
+
     @DeleteMapping("/{id}")
     public String deleteBook(@PathVariable int id) {
         this.bookService.deleteById(id);
         return "{\"status\":\"success\"}";
     }
 
+    @GetMapping("/{id}")
+    public Book getBook(@PathVariable int id) {
+        return this.bookService.getById(id);
+    }
 
 
 }
