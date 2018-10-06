@@ -3,7 +3,7 @@ package pl.coderslab.warsztaty_5.model;
 public class Book {
 
 
-   private long id;
+   private int id;
    private String isbn;
    private String title;
    private String author;
@@ -13,7 +13,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(long id, String isbn, String title, String author, String publisher, String type) {
+    public Book(int id, String isbn, String title, String author, String publisher, String type) {
         this.id = id;
         this.isbn = isbn;
         this.title = title;
@@ -22,11 +22,11 @@ public class Book {
         this.type = type;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
