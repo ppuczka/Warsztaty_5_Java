@@ -47,5 +47,10 @@ public class BookController {
         return this.bookService.getById(id);
     }
 
+    @PutMapping("/{id}")
+    public Book updateBookById(@PathVariable int id, @RequestBody Book book) {
+        this.bookService.update(book);
+        return this.bookService.getById(id);
+    }
 
 }
